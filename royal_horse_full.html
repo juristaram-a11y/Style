@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Horse — Brand Identity 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Source+Sans+3:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Source Sans 3', sans-serif; }
+
+/* ─── COVER ─── */
+.cover {
+  min-height: 100vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+  position: relative;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(139,168,162,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(192,21,42,0.08) 0%, transparent 60%);
+}
+.cover-eyebrow {
+  font-size: 10px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 40px;
+  position: relative;
+}
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: 300;
+  color: #F0EDE8;
+  letter-spacing: 6px;
+  line-height: 0.95;
+  position: relative;
+}
+.cover-title span {
+  display: block;
+  font-style: italic;
+  font-size: 0.55em;
+  letter-spacing: 12px;
+  color: #444;
+  margin-bottom: 8px;
+}
+.cover-divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #444, transparent);
+  margin: 48px auto;
+  position: relative;
+}
+.cover-sub {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #555;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+}
+.cover-directions {
+  display: flex;
+  gap: 48px;
+  margin-top: 60px;
+  position: relative;
+}
+.cover-dir {
+  text-align: center;
+}
+.cover-dir-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.cover-dir-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* ─── SECTION INTRO ─── */
+.section-intro {
+  padding: 80px 60px 60px;
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+}
+.si-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(100px, 18vw, 180px);
+  font-weight: 300;
+  line-height: 0.85;
+  opacity: 0.06;
+  flex-shrink: 0;
+}
+.si-info { flex: 1; }
+.si-label {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.si-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.si-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 480px;
+  letter-spacing: 0.3px;
+}
+
+/* ─── PALETTE ─── */
+.palette {
+  display: flex;
+}
+.swatch {
+  flex: 1;
+  height: 90px;
+  position: relative;
+}
+.swatch-label {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+}
+.swatch-name {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Source Sans 3', sans-serif;
+  display: block;
+}
+.swatch-hex {
+  font-size: 9px;
+  font-family: monospace;
+  opacity: 0.65;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ─── LOGO GRID ─── */
+.logo-section {
+  padding: 2px 0;
+}
+.logo-label-row {
+  padding: 16px 24px;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.logo-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+}
+.logo-cell {
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  text-align: center;
+  gap: 14px;
+}
+.logo-cell-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Source Sans 3', sans-serif;
+  opacity: 0.5;
+  margin-bottom: 4px;
+}
+
+/* ─── TYPE SECTION ─── */
+.type-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.type-cell {
+  padding: 52px 48px;
+}
+.type-eyebrow {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'Source Sans 3', sans-serif;
+  margin-bottom: 28px;
+  display: block;
+}
+.type-hed {
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.type-body {
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ─── CONTENT 2x2 ─── */
+.content-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.cc {
+  padding: 52px 44px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cc-tag {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.cc-hed {
+  line-height: 1.1;
+}
+.cc-sub {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.cc-divider {
+  width: 32px;
+  height: 1px;
+  margin: 20px 0;
+}
+
+/* ─── SOCIAL STRIP ─── */
+.social-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.sc {
+  aspect-ratio: 1;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.sc-line {
+  width: 22px;
+  height: 1px;
+  margin-bottom: 10px;
+}
+.sc-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(12px, 1.8vw, 16px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+/* ─── VS DIVIDER ─── */
+.vs {
+  height: 120px;
+  background: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.vs-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: #222;
+}
+.vs-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* ─── FINAL DECISION ─── */
+.final {
+  background: #0D0D0D;
+  padding: 80px 60px;
+  text-align: center;
+}
+.final-label {
+  font-size: 10px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 40px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.final-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 300;
+  color: #F0EDE8;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.final-sub {
+  font-size: 12px;
+  font-weight: 300;
+  color: #333;
+  letter-spacing: 2px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.final-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 60px;
+  text-align: left;
+}
+.fc {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 32px;
+}
+.fc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 20px;
+  opacity: 0.15;
+}
+.fc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #F0EDE8;
+  margin-bottom: 12px;
+}
+.fc-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: #555;
+  line-height: 1.7;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+/* ─── COLOUR HELPERS ─── */
+.cl { color: #F7F4EF; }
+.cd { color: #3D3A35; }
+.ct { color: #8BA8A2; }
+.cg { color: #C4A882; }
+.cs { color: #E8E0D4; }
+.cr { color: #C0152A; }
+.cc-cream { color: #F0EDE8; }
+.cm { color: #555; }
+
+@media (max-width: 600px) {
+  .section-intro { flex-direction: column; padding: 48px 24px 40px; }
+  .si-num { font-size: 80px; }
+  .logo-3 { grid-template-columns: 1fr 1fr; }
+  .type-2 { grid-template-columns: 1fr; }
+  .content-2 { grid-template-columns: 1fr; }
+  .social-4 { grid-template-columns: repeat(2, 1fr); }
+  .final { padding: 60px 24px; }
+  .final-cards { grid-template-columns: 1fr; }
+  .cover-directions { flex-direction: column; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ COVER ══════ -->
+<div class="cover">
+  <div class="cover-eyebrow">Royal Horse · Brand Identity · Los Angeles · 2026</div>
+  <div class="cover-title">
+    <span>Brand Direction</span>
+    ROYAL HORSE
+  </div>
+  <div class="cover-divider"></div>
+  <div class="cover-sub">Two directions. One decision.</div>
+  <div class="cover-directions">
+    <div class="cover-dir">
+      <div class="cover-dir-num" style="color: #8BA8A2;">Direction A</div>
+      <div class="cover-dir-name" style="color: #F0EDE8;">Silence & Elegance</div>
+    </div>
+    <div style="width: 1px; background: #222; align-self: stretch;"></div>
+    <div class="cover-dir">
+      <div class="cover-dir-num" style="color: #C0152A;">Direction B</div>
+      <div class="cover-dir-name" style="color: #F0EDE8;">Power & Drama</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     DIRECTION A: SILENCE & ELEGANCE
+══════════════════════════════════════ -->
+<div style="background: #F7F4EF;">
+
+  <!-- Intro -->
+  <div class="section-intro" style="background: #F7F4EF;">
+    <div class="si-num cd" style="opacity: 0.05;">A</div>
+    <div class="si-info">
+      <div class="si-label ct">Direction A</div>
+      <div class="si-name cd">Silence &<br>Elegance</div>
+      <div class="si-desc" style="color: #888;">Тишина. Воздух. Утончённость. Бренд который не кричит — его замечают первым. Бежевая лошадь на туманном горизонте. Пространство говорит громче слов.</div>
+    </div>
+  </div>
+
+  <!-- Palette A -->
+  <div class="palette">
+    <div class="swatch" style="background:#3D3A35;">
+      <div class="swatch-label"><span class="swatch-name cl">Charcoal</span><span class="swatch-hex cl">#3D3A35</span></div>
+    </div>
+    <div class="swatch" style="background:#8BA8A2;">
+      <div class="swatch-label"><span class="swatch-name cl">Sage Teal</span><span class="swatch-hex cl">#8BA8A2</span></div>
+    </div>
+    <div class="swatch" style="background:#B5CEC9;">
+      <div class="swatch-label"><span class="swatch-name cd">Soft Teal</span><span class="swatch-hex cd">#B5CEC9</span></div>
+    </div>
+    <div class="swatch" style="background:#E8E0D4;">
+      <div class="swatch-label"><span class="swatch-name cd">Warm Sand</span><span class="swatch-hex cd">#E8E0D4</span></div>
+    </div>
+    <div class="swatch" style="background:#C4A882;">
+      <div class="swatch-label"><span class="swatch-name cd">Muted Gold</span><span class="swatch-hex cd">#C4A882</span></div>
+    </div>
+    <div class="swatch" style="background:#F7F4EF; border-bottom: 1px solid rgba(0,0,0,0.06);">
+      <div class="swatch-label"><span class="swatch-name cd">Off White</span><span class="swatch-hex cd">#F7F4EF</span></div>
+    </div>
+  </div>
+
+  <!-- Logo A -->
+  <div class="logo-section">
+    <div class="logo-label-row" style="background: #F0EDE8; color: #8BA8A2;">A · Варианты логотипа</div>
+    <div class="logo-3">
+      <!-- Wordmark -->
+      <div class="logo-cell" style="background: #3D3A35;">
+        <div class="logo-cell-label cl">Wordmark · Тёмный</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(15px,2.2vw,24px); font-weight:400; letter-spacing:10px; text-transform:uppercase; color:#F7F4EF; text-align:center;">ROYAL HORSE</div>
+        <div style="width:28px;height:1px;background:#C4A882;margin:0 auto;"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:#8BA8A2;">Equestrian</div>
+      </div>
+      <!-- Monogram -->
+      <div class="logo-cell" style="background:#F7F4EF; border:1px solid rgba(0,0,0,0.05);">
+        <div class="logo-cell-label cd">Монограмма · Светлый</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,68px);font-weight:300;font-style:italic;color:#3D3A35;line-height:1;">RH</div>
+        <div style="width:1px;height:20px;background:#8BA8A2;margin:0 auto;"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:#8BA8A2;">Royal Horse</div>
+      </div>
+      <!-- Icon -->
+      <div class="logo-cell" style="background:#8BA8A2;">
+        <div class="logo-cell-label cl">Иконка + текст</div>
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <path d="M33 9C33 9,37 14,34 20C32 24,27 26,23 22C20 20,18 18,15 21C11 25,10 32,12 38C13 41,10 44,8 43" fill="none" stroke="#F7F4EF" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M23 22C25 28,26 35,23 42" fill="none" stroke="#F7F4EF" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="34" cy="8" r="2" fill="#C4A882"/>
+        </svg>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1.8vw,17px);font-weight:400;letter-spacing:6px;text-transform:uppercase;color:#F7F4EF;">Royal Horse</div>
+      </div>
+    </div>
+    <!-- Row 2: light versions -->
+    <div class="logo-3" style="margin-top:2px;">
+      <div class="logo-cell" style="background:#E8E0D4;">
+        <div class="logo-cell-label cd">Wordmark · Sand</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(14px,2vw,22px);font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#3D3A35;text-align:center;">ROYAL HORSE</div>
+        <div style="width:28px;height:1px;background:#3D3A35;opacity:0.25;margin:0 auto;"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8A735E;opacity:0.7;">Est. 2026 · LA</div>
+      </div>
+      <div class="logo-cell" style="background:#8BA8A2;">
+        <div class="logo-cell-label cl">Монограмма · Teal</div>
+        <div style="border:1px solid rgba(247,244,239,0.4);width:60px;height:60px;display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,36px);font-weight:300;color:#F7F4EF;">RH</span>
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(247,244,239,0.6);">ROYAL HORSE</div>
+      </div>
+      <div class="logo-cell" style="background:#F7F4EF;border:1px solid rgba(0,0,0,0.05);">
+        <div class="logo-cell-label cd">Корона · Светлый</div>
+        <svg width="44" height="32" viewBox="0 0 44 32" fill="none">
+          <path d="M3 26 L7 10 L14 18 L22 3 L30 18 L37 10 L41 26 Z" fill="none" stroke="#3D3A35" stroke-width="0.9" stroke-linejoin="round"/>
+          <line x1="3" y1="30" x2="41" y2="30" stroke="#3D3A35" stroke-width="0.9"/>
+        </svg>
+        <div style="width:28px;height:1px;background:#8BA8A2;margin:0 auto;"></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1.8vw,17px);font-weight:400;letter-spacing:7px;text-transform:uppercase;color:#3D3A35;">ROYAL HORSE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography A -->
+  <div class="type-2" style="gap:2px;margin-top:2px;">
+    <div class="type-cell" style="background:#F7F4EF;">
+      <span class="type-eyebrow ct">Cormorant Garamond · заголовки</span>
+      <div class="type-hed" style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:300;color:#3D3A35;">
+        Leather that gets<br><em style="color:#8BA8A2;">better with<br>every ride.</em>
+      </div>
+      <div class="type-body" style="font-family:'Cormorant Garamond',serif;color:#888;font-size:17px;">Crafted for riders who know the difference.</div>
+    </div>
+    <div class="type-cell" style="background:#3D3A35;">
+      <span class="type-eyebrow ct">Source Sans 3 · текст</span>
+      <div class="type-hed" style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,44px);font-weight:400;color:#F7F4EF;">
+        No shortcuts.<br><span style="color:#C4A882;font-style:italic;">Ever.</span>
+      </div>
+      <div class="type-body" style="font-family:'Source Sans 3',sans-serif;color:#666;font-size:13px;letter-spacing:0.5px;">Every stitch. Every buckle. Every detail — considered.</div>
+    </div>
+  </div>
+
+  <!-- Content A -->
+  <div class="content-2" style="gap:2px;margin-top:2px;">
+    <div class="cc" style="background:#8BA8A2;">
+      <div class="cc-tag" style="color:rgba(247,244,239,0.5);">Royal Horse · 2026</div>
+      <div>
+        <div class="cc-hed" style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,46px);font-weight:300;color:#F7F4EF;">The ride<br><em>defines you.</em></div>
+        <div class="cc-divider" style="background:rgba(247,244,239,0.25);"></div>
+        <div class="cc-sub" style="color:rgba(247,244,239,0.55);">Half Chaps · Girths · Halters</div>
+      </div>
+    </div>
+    <div class="cc" style="background:#F7F4EF;border:1px solid rgba(0,0,0,0.05);">
+      <div class="cc-tag" style="color:#8BA8A2;">New Collection</div>
+      <div>
+        <div class="cc-hed" style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,46px);font-weight:400;color:#3D3A35;">Genuine leather.<br><em style="color:#8BA8A2;">No compromise.</em></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,36px);font-weight:300;color:#3D3A35;margin-top:24px;">$54.99</div>
+      </div>
+    </div>
+    <div class="cc" style="background:#E8E0D4;">
+      <div class="cc-tag" style="color:#8A735E;opacity:0.6;">Equestrian</div>
+      <div>
+        <div class="cc-hed" style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,34px);font-weight:400;font-style:italic;color:#3D3A35;">Crafted for<br>the serious rider.</div>
+      </div>
+    </div>
+    <div class="cc" style="background:#3D3A35;">
+      <div class="cc-divider" style="background:#C4A882;"></div>
+      <div class="cc-hed" style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,34px);font-weight:300;color:#F7F4EF;">No shortcuts.<br>Ever.</div>
+      <div class="cc-sub" style="color:#8BA8A2;">Royal Horse · Est. 2026</div>
+    </div>
+  </div>
+
+  <!-- Social A -->
+  <div class="social-4" style="gap:2px;margin-top:2px;">
+    <div class="sc" style="background:#3D3A35;">
+      <div class="sc-line" style="background:#8BA8A2;"></div>
+      <div class="sc-text cl">No shortcuts. Ever.</div>
+    </div>
+    <div class="sc" style="background:#8BA8A2;">
+      <div class="sc-line" style="background:#C4A882;"></div>
+      <div class="sc-text cl">Royal Horse</div>
+    </div>
+    <div class="sc" style="background:#F7F4EF;border:1px solid rgba(0,0,0,0.05);">
+      <div class="sc-line" style="background:#8BA8A2;"></div>
+      <div class="sc-text cd">Every detail.<br>Considered.</div>
+    </div>
+    <div class="sc" style="background:#E8E0D4;">
+      <div class="sc-line" style="background:#3D3A35;"></div>
+      <div class="sc-text cd">Crafted for<br>the rider.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════ VS ══════ -->
+<div class="vs">
+  <div class="vs-line"></div>
+  <div class="vs-text">vs</div>
+  <div class="vs-line"></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     DIRECTION B: POWER & DRAMA
+══════════════════════════════════════ -->
+<div style="background:#1A1A1A;">
+
+  <!-- Intro -->
+  <div class="section-intro" style="background:#1A1A1A;">
+    <div class="si-num" style="color:rgba(192,21,42,0.1);">B</div>
+    <div class="si-info">
+      <div class="si-label" style="color:#C0152A;">Direction B</div>
+      <div class="si-name cc-cream">Power &<br>Drama</div>
+      <div class="si-desc" style="color:#555;">Сила. Характер. Заявление. Бренд который останавливает взгляд с первого кадра. Чёрная лошадь на красном — дерзко, мощно, незабываемо.</div>
+    </div>
+  </div>
+
+  <!-- Palette B -->
+  <div class="palette">
+    <div class="swatch" style="background:#1A1A1A;border-top:1px solid #222;">
+      <div class="swatch-label"><span class="swatch-name cl">Near Black</span><span class="swatch-hex cl">#1A1A1A</span></div>
+    </div>
+    <div class="swatch" style="background:#3D1018;">
+      <div class="swatch-label"><span class="swatch-name cl">Burgundy</span><span class="swatch-hex cl">#3D1018</span></div>
+    </div>
+    <div class="swatch" style="background:#8B0F1E;">
+      <div class="swatch-label"><span class="swatch-name cl">Dark Red</span><span class="swatch-hex cl">#8B0F1E</span></div>
+    </div>
+    <div class="swatch" style="background:#C0152A;">
+      <div class="swatch-label"><span class="swatch-name cl">Deep Red</span><span class="swatch-hex cl">#C0152A</span></div>
+    </div>
+    <div class="swatch" style="background:#C4A882;">
+      <div class="swatch-label"><span class="swatch-name cd">Muted Gold</span><span class="swatch-hex cd">#C4A882</span></div>
+    </div>
+    <div class="swatch" style="background:#F0EDE8;">
+      <div class="swatch-label"><span class="swatch-name cd">Cream</span><span class="swatch-hex cd">#F0EDE8</span></div>
+    </div>
+  </div>
+
+  <!-- Logo B -->
+  <div class="logo-section">
+    <div class="logo-label-row" style="background:#111;color:#C0152A;">B · Варианты логотипа</div>
+    <div class="logo-3">
+      <div class="logo-cell" style="background:#C0152A;">
+        <div class="logo-cell-label" style="color:rgba(240,237,232,0.4);">Wordmark · Red</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,2.2vw,24px);font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#F0EDE8;text-align:center;">ROYAL HORSE</div>
+        <div style="width:28px;height:1px;background:rgba(240,237,232,0.3);margin:0 auto;"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(240,237,232,0.4);">Equestrian</div>
+      </div>
+      <div class="logo-cell" style="background:#1A1A1A;">
+        <div class="logo-cell-label" style="color:#444;">Монограмма · Black</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,68px);font-weight:400;color:#C0152A;line-height:1;">RH</div>
+        <div style="width:1px;height:20px;background:#C4A882;margin:0 auto;"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:#444;">Royal Horse</div>
+      </div>
+      <div class="logo-cell" style="background:#3D1018;">
+        <div class="logo-cell-label" style="color:rgba(240,237,232,0.3);">Иконка · Burgundy</div>
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <path d="M33 9C33 9,37 14,34 20C32 24,27 26,23 22C20 20,18 18,15 21C11 25,10 32,12 38C13 41,10 44,8 43" fill="none" stroke="#C0152A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M23 22C25 28,26 35,23 42" fill="none" stroke="#C0152A" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="34" cy="8" r="2.5" fill="#C4A882"/>
+        </svg>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1.8vw,17px);font-weight:400;letter-spacing:6px;text-transform:uppercase;color:#F0EDE8;">Royal Horse</div>
+      </div>
+    </div>
+    <div class="logo-3" style="margin-top:2px;">
+      <div class="logo-cell" style="background:#F0EDE8;">
+        <div class="logo-cell-label cd">Wordmark · Cream</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,2.2vw,24px);font-weight:400;letter-spacing:8px;text-transform:uppercase;color:#1A1A1A;text-align:center;">ROYAL HORSE</div>
+        <div style="width:28px;height:1px;background:#C0152A;margin:0 auto;"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#C0152A;opacity:0.6;">Est. 2026 · LA</div>
+      </div>
+      <div class="logo-cell" style="background:#8B0F1E;">
+        <div class="logo-cell-label" style="color:rgba(240,237,232,0.3);">Монограмма · Dark Red</div>
+        <div style="border:1px solid rgba(240,237,232,0.2);width:60px;height:60px;display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,36px);font-weight:300;color:#F0EDE8;">RH</span>
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(240,237,232,0.4);">ROYAL HORSE</div>
+      </div>
+      <div class="logo-cell" style="background:#1A1A1A;">
+        <div class="logo-cell-label" style="color:#444;">Корона · Black</div>
+        <svg width="44" height="32" viewBox="0 0 44 32" fill="none">
+          <path d="M3 26 L7 10 L14 18 L22 3 L30 18 L37 10 L41 26 Z" fill="none" stroke="#C0152A" stroke-width="1" stroke-linejoin="round"/>
+          <line x1="3" y1="30" x2="41" y2="30" stroke="#C0152A" stroke-width="1"/>
+        </svg>
+        <div style="width:28px;height:1px;background:#C4A882;margin:0 auto;"></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1.8vw,17px);font-weight:400;letter-spacing:7px;text-transform:uppercase;color:#F0EDE8;">ROYAL HORSE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography B -->
+  <div class="type-2" style="gap:2px;margin-top:2px;">
+    <div class="type-cell" style="background:#1A1A1A;">
+      <span class="type-eyebrow" style="color:#C0152A;">Playfair Display · заголовки</span>
+      <div class="type-hed" style="font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,52px);font-weight:700;color:#F0EDE8;">
+        Leather that gets<br><em style="font-weight:400;color:#C0152A;">better with<br>every ride.</em>
+      </div>
+      <div class="type-body" style="font-family:'Source Sans 3',sans-serif;color:#555;font-size:14px;letter-spacing:0.5px;">For riders who demand more.</div>
+    </div>
+    <div class="type-cell" style="background:#C0152A;">
+      <span class="type-eyebrow" style="color:rgba(240,237,232,0.4);">Source Sans 3 · текст</span>
+      <div class="type-hed" style="font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,44px);font-weight:700;color:#F0EDE8;">
+        No shortcuts.<br><span style="font-weight:400;font-style:italic;">Ever.</span>
+      </div>
+      <div class="type-body" style="font-family:'Source Sans 3',sans-serif;color:rgba(240,237,232,0.5);font-size:13px;letter-spacing:0.5px;">Every stitch. Every buckle. Every detail — considered.</div>
+    </div>
+  </div>
+
+  <!-- Content B -->
+  <div class="content-2" style="gap:2px;margin-top:2px;">
+    <div class="cc" style="background:#3D1018;">
+      <div class="cc-tag" style="color:#C0152A;">Royal Horse · 2026</div>
+      <div>
+        <div class="cc-hed" style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,46px);font-weight:700;color:#F0EDE8;">The ride<br><em style="font-weight:400;color:#C0152A;">defines you.</em></div>
+        <div class="cc-divider" style="background:#C0152A;"></div>
+        <div class="cc-sub" style="color:rgba(240,237,232,0.4);">Half Chaps · Girths · Halters</div>
+      </div>
+    </div>
+    <div class="cc" style="background:#1A1A1A;">
+      <div class="cc-tag" style="color:#C0152A;">New Collection</div>
+      <div>
+        <div class="cc-hed" style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,46px);font-weight:400;color:#F0EDE8;">Genuine leather.<br><em style="color:#C0152A;">No compromise.</em></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,36px);font-weight:400;color:#F0EDE8;margin-top:24px;">$54.99</div>
+      </div>
+    </div>
+    <div class="cc" style="background:#C0152A;">
+      <div class="cc-tag" style="color:rgba(240,237,232,0.5);">Equestrian</div>
+      <div>
+        <div class="cc-hed" style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,34px);font-weight:700;color:#F0EDE8;">Crafted for<br>the serious rider.</div>
+      </div>
+    </div>
+    <div class="cc" style="background:#1A1A1A;">
+      <div class="cc-divider" style="background:#C4A882;"></div>
+      <div class="cc-hed" style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,34px);font-weight:400;color:#F0EDE8;">No shortcuts.<br><em style="color:#C0152A;">Ever.</em></div>
+      <div class="cc-sub" style="color:#444;">Royal Horse · Est. 2026</div>
+    </div>
+  </div>
+
+  <!-- Social B -->
+  <div class="social-4" style="gap:2px;margin-top:2px;">
+    <div class="sc" style="background:#1A1A1A;">
+      <div class="sc-line" style="background:#C0152A;"></div>
+      <div class="sc-text cc-cream">No shortcuts. Ever.</div>
+    </div>
+    <div class="sc" style="background:#C0152A;">
+      <div class="sc-line" style="background:rgba(240,237,232,0.35);"></div>
+      <div class="sc-text cc-cream">Royal Horse</div>
+    </div>
+    <div class="sc" style="background:#3D1018;">
+      <div class="sc-line" style="background:#C4A882;"></div>
+      <div class="sc-text cc-cream">Every detail.<br>Considered.</div>
+    </div>
+    <div class="sc" style="background:#8B0F1E;">
+      <div class="sc-line" style="background:rgba(240,237,232,0.25);"></div>
+      <div class="sc-text cc-cream">Crafted for<br>the rider.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════ FINAL DECISION ══════ -->
+<div class="final">
+  <div class="final-label">Следующий шаг</div>
+  <div class="final-question">A — Silence & Elegance<br>или B — Power & Drama?</div>
+  <div class="final-sub">Или взять элементы из обоих?</div>
+  <div class="final-cards">
+    <div class="fc">
+      <div class="fc-num" style="color:#8BA8A2;">A</div>
+      <div class="fc-title">Направление логотипа</div>
+      <div class="fc-desc">Wordmark, монограмма RH или иконка с лошадью? Выбрать одно направление — доработать с дизайнером или в AI.</div>
+    </div>
+    <div class="fc">
+      <div class="fc-num" style="color:#C0152A;">B</div>
+      <div class="fc-title">Цвет бренда</div>
+      <div class="fc-desc">Sage Teal (#8BA8A2) — тишина и элегантность. Deep Red (#C0152A) — сила и характер. Или третий вариант?</div>
+    </div>
+    <div class="fc">
+      <div class="fc-num" style="color:#C4A882;">C</div>
+      <div class="fc-title">Типографика</div>
+      <div class="fc-desc">Cormorant Garamond (мягче, воздушнее) или Playfair Display (жёстче, контрастнее)? Оба работают с обоими направлениями.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
